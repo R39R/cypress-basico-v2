@@ -91,4 +91,22 @@ describe('Central de Atendimento ao Cliente TAT', function(){
         .should('have.value', 'mentoria')
     })
 
+    it('Faz uma requisição HTTP', () => {
+        cy.request('http://cac-tat.s3.eu-central-1.amazonaws.com/index.html')
+            .should(function(response){
+                const {status, statusText, body} = response
+                expect(status).to.equal(200)
+                expect(statusText).to.equal('OK')
+                expect(expect(body).to.include('CAC TAT'))
+        })
+    })
+
+    it.only('mostra o gato e muca os titulos', () =>{
+        cy.get('#cat')
+            .invoke('show')
+        cy.get('#title')
+            .invoke('text', 'CAT TAT')
+        cy.get('#subtitle')
+            .invoke('text', 'Eu 💗 gatos!!')
+    })
 })
