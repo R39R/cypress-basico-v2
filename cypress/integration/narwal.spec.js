@@ -5,7 +5,7 @@ describe('Portal Narwal', () => {
         cy.visit('cliente1regression.narwalsistemas.com.br')
     })
 
-    it('Logar e criar admin', () => {
+    it('Logar e criar usuário', () => {
         cy.get('#Login')
             .type('admin', {delay: 0})
         cy.get('#senha')
