@@ -5,7 +5,7 @@ describe('Portal Narwal', () => {
         cy.visit('cliente1regression.narwalsistemas.com.br')
     })
 
-    it('Logar e criar usuário', () => {
+    it('Teste: logar e criar usuário', () => {
         cy.loginNarwal()
         cy.get('[data-id="1"] > .k-header')
             .click({force: true})
@@ -33,8 +33,7 @@ describe('Portal Narwal', () => {
                 .click({waitForAnimations: true})
             cy.get('.noty_text')
                 .should('have.text', 'Operação realizada com sucesso')
-            cy.wait(1000)
-            
+            cy.wait(1000) 
         }
     })
 
