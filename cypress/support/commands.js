@@ -1,4 +1,4 @@
-Cypress.Commands.add('fillMandatoryFieldsAndSubmit', function(){
+Cypress.Commands.add('fillMandatoryFieldsAndSubmit', function() {
     const longText = 'Text, text, text, text, text, text, Text, text, text, text, text, text, Text, text, text, text, text, text, Text, text, text, text, text, text, Text, text, text, text, text, text, Text, text, text, text, text, text'
     cy.get('#firstName').type('vinicius', {delay:0});
     cy.get('#lastName').type('rodrigues', {delay:0});
@@ -7,7 +7,7 @@ Cypress.Commands.add('fillMandatoryFieldsAndSubmit', function(){
     cy.contains('button', 'Enviar').click({delay:0});
 })
 
-Cypress.Commands.add('loginNarwal', () =>{
+Cypress.Commands.add('loginNarwal', () => {
     cy.get('#Login')
         .type('admin', {delay: 0})
     cy.get('#senha')

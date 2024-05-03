@@ -12,7 +12,7 @@ describe('Portal Narwal', () => {
         cy.get('[data-id="19"] > .k-link')
             .click({force: true})
 
-        for(var i=1; i<=3; i++){
+        for(var i=1; i<=3; i++) {
             var a=i;
             cy.get('#btnNovo')
                 .click({waitForAnimations: true})
@@ -27,11 +27,14 @@ describe('Portal Narwal', () => {
             cy.get('.tbValue > .k-widget > .k-dropdown-wrap > .k-input')
                 .type('{downArrow}')
                 .type('{enter}')
+            cy.get('.k-checkbox')
+                .check({force: true})
             cy.get('#btnAdicionar')
                 .click({waitForAnimations: true})
             cy.get('.noty_text')
                 .should('have.text', 'Operação realizada com sucesso')
             cy.wait(1000)
+            
         }
     })
 
